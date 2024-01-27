@@ -6,7 +6,7 @@ $ sudo vi /opt/scripts/battery-status-1.sh
        export DISPLAY=:0.0
        battery_level=`acpi -b | grep -P -o '[0-9]+(?=%)'`
        if on_ac_power; then
-           if [ $battery_level -ge 95 ]; then
+           if [ $battery_level -ge 100 ]; then
               notify-send "Battery Full" "Level: ${battery_level}% "
               paplay /usr/share/sounds/freedesktop/stereo/suspend-error.oga
            fi
